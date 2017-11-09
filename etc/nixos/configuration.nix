@@ -21,6 +21,7 @@
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   networking.hostName = "w"; # Define your hostname.
+  networking.networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Select internationalisation properties.
@@ -73,11 +74,7 @@
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.desktoManager = {
-    xfce.enable = true;
-    default = "xfce"
-  };
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.pamplemousse = {

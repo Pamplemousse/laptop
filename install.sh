@@ -18,9 +18,9 @@ mount /dev/disk/by-label/nixos /mnt
 fallocate -l 8G /mnt/swapfile
 chmod 600 /mnt/swapfile
 mkswap -L swap /mnt/swapfile
-swapon /dev/disk/by-label/swap
+swapon /mnt/swapfile
 
 nixos-generate-config --root /mnt
 
-curl -Sso /mnt/etc/nixos/configuration.nix https://raw.github.usercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
+curl -Sso /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
 nixos-install
