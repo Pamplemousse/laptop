@@ -33,12 +33,22 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    chromium
     docker
+    evince
     firefox
+    gcc
+    gdb
     git
+    gnumake
     keepassx-community
+    keybase
+    keybase-gui
+    kbfs
+    libreoffice
     tmux
     vim
+    vlc
   ];
 
   virtualisation.docker.enable = true;
@@ -76,7 +86,7 @@
   users.extraUsers.pamplemousse = {
     isNormalUser = true;
     description = "Xavier Maso";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     home = "/home/pamplemousse";
     shell = pkgs.zsh;
     uid = 1000;
