@@ -40,6 +40,7 @@
     keybase-gui
     kbfs
     libreoffice
+    ntfs3g
     tmux
     vim
     vlc
