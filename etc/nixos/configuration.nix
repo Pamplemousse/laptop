@@ -48,6 +48,11 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.enableOnBoot = true;
 
+  services.logind.extraConfig = "
+    HandleLidSwitch=suspend
+    HandleLidSwitchDocked=suspend
+  ";
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
