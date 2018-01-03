@@ -57,10 +57,9 @@
 
   # services.xserver.xkbOptions = "eurosign:e";
 
-  # Enable the KDE Desktop Environment.
-  # services.xserver.desktopManager.gnome3.enable = true;
-  # services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # Enable the Gnome Desktop Environment.
+  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.gdm.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.pamplemousse = {
