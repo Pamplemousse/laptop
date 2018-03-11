@@ -51,6 +51,9 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.keybase.enable = true;
+  services.kbfs.enable = true;
+
   services.logind.extraConfig = "
     HandleLidSwitch=suspend
     HandleLidSwitchDocked=suspend
