@@ -32,9 +32,11 @@
     ntfs3g
     openjdk
     skype
+    tcpdump
     tmux
     vim
     vlc
+    wireshark
     youtube-dl
   ];
 
