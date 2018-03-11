@@ -31,9 +31,11 @@
     libreoffice
     ntfs3g
     openjdk
+    skype
     tmux
     vim
     vlc
+    youtube-dl
   ];
 
   i18n = {
@@ -44,6 +46,8 @@
 
   networking.hostName = "w";
   networking.networkmanager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
 
   services.logind.extraConfig = "
     HandleLidSwitch=suspend
