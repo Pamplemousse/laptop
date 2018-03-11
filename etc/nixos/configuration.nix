@@ -14,6 +14,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    ant
+    bash
     chromium
     docker
     evince
@@ -28,6 +30,7 @@
     kbfs
     libreoffice
     ntfs3g
+    openjdk
     tmux
     vim
     vlc
