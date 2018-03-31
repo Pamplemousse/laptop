@@ -13,6 +13,7 @@ homeshick clone git@github.com:Pamplemousse/dotfiles.git
 
 # Install Oh-My-Zsh
 nix-env -iA nixos.oh-my-zsh
+ln -s $(nix-env -q --out-path oh-my-zsh | cut -d' ' -f3)/share/oh-my-zsh $HOME/.oh-my-zsh
 
 # Install Vundle (vim plugin manager)
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
