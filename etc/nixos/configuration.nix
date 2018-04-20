@@ -34,6 +34,7 @@
     skype
     tcpdump
     tmux
+    usbguard
     vim
     vlc
     wireshark
@@ -58,6 +59,8 @@
     HandleLidSwitch=suspend
     HandleLidSwitchDocked=suspend
   ";
+
+  services.usbguard.enable = true;
 
   services.xserver = {
     desktopManager.gnome3.enable = true;
