@@ -14,11 +14,14 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    androidsdk
     ant
     bash
     chromium
+    ctags
     docker
     evince
+    file
     firefox
     gcc
     gdb
@@ -36,8 +39,10 @@
     perlPackages.LWPProtocolHttps
     perlPackages.NetSSLeay
     skype
+    syncthing
     tcpdump
     tmux
+    tree
     usbguard
     vim
     vlc
