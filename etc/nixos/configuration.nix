@@ -24,6 +24,7 @@
     gdb
     git
     gnumake
+    irssi
     keepassx-community
     keybase
     keybase-gui
@@ -31,6 +32,9 @@
     libreoffice
     ntfs3g
     openjdk
+    perlPackages.LWP
+    perlPackages.LWPProtocolHttps
+    perlPackages.NetSSLeay
     skype
     tcpdump
     tmux
