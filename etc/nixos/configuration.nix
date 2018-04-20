@@ -88,6 +88,10 @@
     uid = 1000;
   };
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = true;
+  virtualisation = {
+    docker.enable = true;
+    docker.enableOnBoot = true;
+
+    virtualbox.host.enable = true;
+  };
 }
