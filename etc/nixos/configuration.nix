@@ -69,7 +69,10 @@
     HandleLidSwitchDocked=suspend
   ";
 
-  services.usbguard.enable = true;
+  services.usbguard = {
+    enable = true;
+    IPCAllowedUsers = [ "root" "pamplemousse" ];
+  };
 
   services.xserver = {
     desktopManager.gnome3.enable = true;
