@@ -23,5 +23,5 @@ curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/setup.sh |
 
 When in trouble, have a look at:
 
+  * [NixOS on Dell XPS15 9560](http://grahamc.com/blog/nixos-on-dell-9560)
   * [Installation Guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
-  * [Full Disk Encryption](https://nixos.wiki/wiki/Full_Disk_Encryption)
