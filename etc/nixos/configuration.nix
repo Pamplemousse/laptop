@@ -7,8 +7,13 @@
       ./luks-devices-configuration.nix
     ];
 
+  boot.blacklistedKernelModules = [ "nouveau" "bbswitch" ];
+  boot.extraModulePackages = [ pkgs.linuxPackages.nvidia_x11 ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
+
+  hardware.bumblebee.enable = true;
+  hardware.bumblebee.pmMethod = "none";
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -55,7 +60,7 @@
   ];
 
   i18n = {
-    consoleFont = "Lat2-Terminus16";
+    consoleFont = "latarcyrheb-sun32";
     consoleKeyMap = "fr-bepo";
     defaultLocale = "en_US.UTF-8";
   };
@@ -71,6 +76,8 @@
     enable = true;
     libpurple_plugins = [ pkgs.purple-hangouts ];
   };
+
+  powerManagement.cpuFreqGovernor = "powersave";
 
   services.keybase.enable = true;
   services.kbfs.enable = true;
@@ -90,6 +97,7 @@
     displayManager.gdm.enable = true;
     enable = true;
     layout = "fr";
+    libinput.enable = true;
     xkbVariant = "bepo";
   };
 
