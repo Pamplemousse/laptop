@@ -17,6 +17,7 @@
     androidsdk
     ant
     bash
+    bitlbee
     chromium
     ctags
     docker
@@ -38,6 +39,7 @@
     perlPackages.LWP
     perlPackages.LWPProtocolHttps
     perlPackages.NetSSLeay
+    purple-hangouts
     skype
     syncthing
     tcpdump
@@ -60,6 +62,12 @@
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.bitlbee.enableLibPurple = true;
+
+  services.bitlbee = {
+    enable = true;
+    libpurple_plugins = [ pkgs.purple-hangouts ];
+  };
 
   services.keybase.enable = true;
   services.kbfs.enable = true;
