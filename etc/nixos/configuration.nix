@@ -39,6 +39,7 @@
     perlPackages.LWPProtocolHttps
     perlPackages.NetSSLeay
     purple-hangouts
+    shellcheck
     skype
     syncthing
     tcpdump

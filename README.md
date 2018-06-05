@@ -19,6 +19,12 @@ passwd -l root
 curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/setup.sh | sh
 ```
 
+## lint
+
+```bash
+shellcheck -e SC1090 install.sh setup.sh
+```
+
 ## help
 
 When in trouble, have a look at:
