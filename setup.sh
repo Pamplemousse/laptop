@@ -25,4 +25,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Pull down tools
 mkdir $HOME/Workspace/tools
+
 git clone https://github.com/rukshn/pomodoro.git $HOME/Workspace/tools/pomodoro
+
+curl -Ss https://github.com/edouard-lopez/record-gif.sh/raw/master/record-gif.sh --output $HOME/Workspace/tools/record-gif.sh
+chmod +x $HOME/Workspace/tools/record-gif.sh

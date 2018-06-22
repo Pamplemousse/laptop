@@ -22,5 +22,5 @@ swapon /mnt/swapfile
 
 nixos-generate-config --root /mnt
 
-curl -Sso /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
+curl -Ss /mnt/etc/nixos/configuration.nix --output https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
 nixos-install

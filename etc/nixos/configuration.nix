@@ -18,6 +18,7 @@
     ant
     bash
     bitlbee
+    byzanz
     chromium
     ctags
     docker
@@ -49,6 +50,7 @@
     vim
     vlc
     wireshark
+    xrectsel
     youtube-dl
   ];
 
