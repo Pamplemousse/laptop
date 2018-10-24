@@ -92,7 +92,7 @@
     xkbVariant = "bepo";
   };
 
-  system.stateVersion = "17.09";
+  system.stateVersion = "18.09";
   system.autoUpgrade.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
