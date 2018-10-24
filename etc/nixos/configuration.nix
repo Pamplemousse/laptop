@@ -22,7 +22,6 @@
     chromium
     ctags
     docker
-    evince
     file
     firefox
     gcc
@@ -52,6 +51,7 @@
     wireshark
     xrectsel
     youtube-dl
+    zathura
   ];
 
   i18n = {
@@ -65,6 +65,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.bitlbee.enableLibPurple = true;
+  nixpkgs.config.zathura.useMupdf = true;
 
   services.bitlbee = {
     enable = true;
