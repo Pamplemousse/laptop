@@ -80,6 +80,15 @@
     HandleLidSwitchDocked=suspend
   ";
 
+  services.udev = {
+    path = [ "/home/dan/udev/bin" ];
+    extraRules = ''
+      # ACTION=="add", ATTRS{idVendor}=="1e54", ATTRS{idProduct}=="2030", ENV{XKBLAYOUT}="fr", ENV{XKBVARIANT}="bepo"
+      ACTION=="add", ATTRS{idVendor}=="1e54", ATTRS{idProduct}=="2030", ENV{XKBLAYOUT}="us"
+      ACTION=="add", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0407", ENV{XKBLAYOUT}="us"
+    '';
+  };
+
   services.usbguard = {
     enable = true;
     IPCAllowedUsers = [ "root" "pamplemousse" ];
