@@ -19,6 +19,10 @@ ln -s "$(nix-env -q --out-path oh-my-zsh | cut -d' ' -f3)/share/oh-my-zsh" "${HO
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c ":PluginInstall" -c "q|q"
 
+mkdir "${HOME}/.vim/spell"
+curl -Ok http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
+mv fr.utf-8.spl "${HOME}/.vim/spell/"
+
 # Install TPM (tmux plugin manager)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
