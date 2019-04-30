@@ -21,6 +21,9 @@ vim -c ":PluginInstall" -c "q|q"
 curl -Ssok "${HOME}/.vim/spell/fr.utf-8.spl" \
   https://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
 
+# Setup less
+lesskey ~/.lessrc
+
 # Install TPM (tmux plugin manager)
 git clone https://github.com/tmux-plugins/tpm "${HOME}/.tmux/plugins/tpm"
 "$HOME"/.tmux/plugins/tpm/bin/install_plugins
