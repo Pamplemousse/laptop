@@ -29,5 +29,5 @@ shellcheck -e SC1090 install.sh setup.sh
 
 When in trouble, have a look at:
 
-  * [NixOS on Dell XPS15 9560](http://grahamc.com/blog/nixos-on-dell-9560)
+  * [My blog post](https://blog.xaviermaso.com/2019/02/28/NixOS-on-a-Dell-XPS15-9560.html)
   * [Installation Guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
