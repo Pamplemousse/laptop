@@ -13,20 +13,23 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    androidsdk
-    ant
+    afl
     bash
+    binutils
     bitlbee
     byzanz
     chromium
     ctags
     docker
+    exif
     file
     firefox
     gcc
     gdb
+    gimp
     git
     gnumake
+    gradle
     irssi
     keepassx-community
     keybase
@@ -41,6 +44,7 @@
     purple-hangouts
     shellcheck
     skype
+    ssss
     syncthing
     tcpdump
     tmux
@@ -51,7 +55,9 @@
     wireshark
     xrectsel
     youtube-dl
+    z3
     zathura
+    zoom-us
   ];
 
   i18n = {
@@ -93,7 +99,7 @@
     xkbVariant = "bepo";
   };
 
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.03";
   system.autoUpgrade.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
