@@ -11,8 +11,7 @@ source "${HOME}/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone git@github.com:Pamplemousse/dotfiles.git
 
 # Install Oh-My-Zsh
-nix-env -iA nixos.oh-my-zsh
-ln -s "$(nix-env -q --out-path oh-my-zsh | cut -d' ' -f3)/share/oh-my-zsh" "${HOME}/.oh-my-zsh"
+ln -s "$(nix-store --query --requisites /run/current-system | grep oh-my-zsh | sort | uniq)/share/oh-my-zsh" "${HOME}/.oh-my-zsh"
 
 # Setup Vim
 git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"

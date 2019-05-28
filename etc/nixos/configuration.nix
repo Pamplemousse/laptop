@@ -37,6 +37,7 @@
     kbfs
     libreoffice
     ntfs3g
+    oh-my-zsh
     openjdk
     perlPackages.LWP
     perlPackages.LWPProtocolHttps
