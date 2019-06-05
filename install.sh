@@ -41,6 +41,9 @@ nixos-generate-config --root /mnt
 
 curl -Sso /mnt/etc/nixos/luks-devices-configuration.nix \
   https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/luks-devices-configuration.nix
+curl -Sso /mnt/etc/nixos/packages.nix \
+  https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/packages.nix
+
 sed -i -e "s/DISK/${DISK}/g" /mnt/etc/nixos/luks-devices-configuration.nix
 curl -Sso /mnt/etc/nixos/configuration.nix \
   https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
