@@ -61,8 +61,15 @@
     zoom-us
   ];
 
+  fonts = {
+    enableFontDir = true;
+    fonts = with pkgs; [
+      nerdfonts
+    ];
+  };
+
   i18n = {
-    consoleFont = "Lat2-Terminus16";
+    consoleFont = "Fura Code Regular Nerd Font Complete Mono";
     consoleKeyMap = "fr-bepo";
     defaultLocale = "en_US.UTF-8";
   };
