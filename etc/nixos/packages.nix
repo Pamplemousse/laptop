@@ -7,11 +7,9 @@
     afl
     bash
     binutils
-    bitlbee
     byzanz
     chromium
     ctags
-    docker
     exif
     file
     firefox
@@ -21,19 +19,11 @@
     git
     gnumake
     gradle
-    irssi
     keepassx-community
-    keybase
-    keybase-gui
-    kbfs
     libreoffice
     ntfs3g
     oh-my-zsh
     openjdk
-    perlPackages.LWP
-    perlPackages.LWPProtocolHttps
-    perlPackages.NetSSLeay
-    purple-hangouts
     shellcheck
     skype
     ssss
@@ -41,14 +31,12 @@
     tcpdump
     tmux
     tree
-    usbguard
     vim
     vlc
     wireshark
     xrectsel
     youtube-dl
     z3
-    zathura
     zoom-us
   ];
 

@@ -7,6 +7,12 @@
       ./luks-devices-configuration.nix
 
       # Include packages with their related configuration
+      ./docker.nix
+      ./irssi.nix
+      ./keybase.nix
+      ./usbguard.nix
+      ./zathura.nix
+
       ./packages.nix
     ];
 
@@ -29,26 +35,10 @@
   networking.hostName = "w";
   networking.networkmanager.enable = true;
 
-  nixpkgs.config.bitlbee.enableLibPurple = true;
-  nixpkgs.config.zathura.useMupdf = true;
-
-  services.bitlbee = {
-    enable = true;
-    libpurple_plugins = [ pkgs.purple-hangouts ];
-  };
-
-  services.keybase.enable = true;
-  services.kbfs.enable = true;
-
   services.logind.extraConfig = "
     HandleLidSwitch=suspend
     HandleLidSwitchDocked=suspend
   ";
-
-  services.usbguard = {
-    enable = true;
-    IPCAllowedUsers = [ "root" "pamplemousse" ];
-  };
 
   services.xserver = {
     desktopManager.gnome3.enable = true;
@@ -73,9 +63,6 @@
   };
 
   virtualisation = {
-    docker.enable = true;
-    docker.enableOnBoot = true;
-
     virtualbox.host.enable = true;
   };
 }

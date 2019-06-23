@@ -39,10 +39,22 @@ mount /dev/disk/by-label/efi /mnt/boot
 
 nixos-generate-config --root /mnt
 
-curl -Sso /mnt/etc/nixos/luks-devices-configuration.nix \
-  https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/luks-devices-configuration.nix
-curl -Sso /mnt/etc/nixos/packages.nix \
-  https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/packages.nix
+declare -a NIX_CONFIGURATION_FILES=(
+  "luks-devices-configuration"
+
+  "docker"
+  "irssi"
+  "keybase"
+  "usbguard"
+  "zathura"
+
+  "packages"
+)
+for file in "${NIX_CONFIGURATION_FILES[@]}"
+do
+  curl -Sso /mnt/etc/nixos/"$file".nix \
+    https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/"$file".nix
+done
 
 sed -i -e "s/DISK/${DISK}/g" /mnt/etc/nixos/luks-devices-configuration.nix
 curl -Sso /mnt/etc/nixos/configuration.nix \
