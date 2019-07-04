@@ -3,12 +3,16 @@
 # Setup my environment
 #
 
+echo "Where are your secret dotfiles? (ssh://user@domain:port/username/repo.git) "
+read -r secret_dotfiles_repo
+
 mkdir -p "${HOME}/Workspace/tools"
 
 # Pull down my dotfiles
 git clone https://github.com/andsens/homeshick.git "${HOME}/.homesick/repos/homeshick"
 source "${HOME}/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone git@github.com:Pamplemousse/dotfiles.git
+homeshick clone "$secret_dotfiles_repo"
 
 # Install Oh-My-Zsh
 ln -s "$(nix-store --query --requisites /run/current-system | grep oh-my-zsh | sort | uniq)/share/oh-my-zsh" "${HOME}/.oh-my-zsh"
