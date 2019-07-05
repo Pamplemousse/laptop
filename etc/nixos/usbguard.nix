@@ -8,5 +8,6 @@
   services.usbguard = {
     enable = true;
     IPCAllowedUsers = [ "root" "pamplemousse" ];
+    ruleFile = "/home/pamplemousse/.config/usbguard/rules.conf";
   };
 }

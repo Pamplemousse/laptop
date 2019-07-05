@@ -37,3 +37,6 @@ git clone https://github.com/rukshn/pomodoro.git "${HOME}/Workspace/tools/pomodo
 curl -Sso "${HOME}/Workspace/tools/record-gif.sh" \
   https://raw.githubusercontent.com/edouard-lopez/record-gif.sh/master/record-gif.sh
 chmod +x "${HOME}/Workspace/tools/record-gif.sh"
+
+# Restart to apply configuration
+systemctl restart usbguard
