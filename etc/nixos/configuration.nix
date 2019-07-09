@@ -11,6 +11,7 @@
       ./irssi.nix
       ./keybase.nix
       ./usbguard.nix
+      ./screenlocker.nix
       ./zathura.nix
 
       ./packages.nix

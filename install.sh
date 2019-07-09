@@ -49,6 +49,7 @@ declare -a NIX_CONFIGURATION_FILES=(
   "zathura"
 
   "packages"
+  "screenlocker"
 )
 for file in "${NIX_CONFIGURATION_FILES[@]}"
 do
