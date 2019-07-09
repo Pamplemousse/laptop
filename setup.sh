@@ -21,7 +21,7 @@ ln -s "$(nix-store --query --requisites /run/current-system | grep oh-my-zsh | s
 git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
 vim -c ":PluginInstall" -c "q|q"
 
-curl -Ssok "${HOME}/.vim/spell/fr.utf-8.spl" \
+curl -Ssk --create-dirs -o "${HOME}/.vim/spell/fr.utf-8.spl" \
   https://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
 
 # Setup less
