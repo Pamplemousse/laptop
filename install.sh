@@ -4,8 +4,8 @@
 #
 
 fdisk -l
-read -p -r "Which disk shall we install everything on? (eg: /dev/sda) " DISK
-read -p -r "How much RAM is there on this laptop in GiB? " RAM
+read -r -p "Which disk shall we install everything on? (eg: /dev/sda) " DISK
+read -r -p "How much RAM is there on this laptop in GiB? " RAM
 
 # format and create partitions
 sgdisk -og "$DISK"

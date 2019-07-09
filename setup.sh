@@ -3,8 +3,7 @@
 # Setup my environment
 #
 
-echo "Where are your secret dotfiles? (ssh://user@domain:port/username/repo.git) "
-read -r secret_dotfiles_repo
+read -r -p "Where are your secret dotfiles? (ssh://user@domain:port/username/repo.git) " secret_dotfiles_repo
 
 mkdir -p "${HOME}/Workspace/tools"
 
