@@ -17,8 +17,9 @@ homeshick clone "$secret_dotfiles_repo"
 ln -s "$(nix-store --query --requisites /run/current-system | grep oh-my-zsh | sort | uniq)/share/oh-my-zsh" "${HOME}/.oh-my-zsh"
 
 # Setup Vim
-git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
-vim -c ":PluginInstall" -c "q|q"
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c ":PlugInstall" -c "q|q"
 
 curl -Ssk --create-dirs -o "${HOME}/.vim/spell/fr.utf-8.spl" \
   https://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
