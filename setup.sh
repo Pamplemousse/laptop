@@ -16,10 +16,10 @@ homeshick clone "$secret_dotfiles_repo"
 # Install Oh-My-Zsh
 ln -s "$(nix-store --query --requisites /run/current-system | grep oh-my-zsh | sort | uniq)/share/oh-my-zsh" "${HOME}/.oh-my-zsh"
 
-# Setup Vim
+# Setup NeoVim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim -c ":PlugInstall" -c "q|q"
+nvim -c ":PlugInstall" -c "q|q"
 
 curl -Ssk --create-dirs -o "${HOME}/.vim/spell/fr.utf-8.spl" \
   https://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl

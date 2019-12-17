@@ -21,6 +21,7 @@
     gradle
     keepassx-community
     libreoffice
+    neovim
     ntfs3g
     oh-my-zsh
     openjdk
@@ -31,7 +32,6 @@
     tcpdump
     tmux
     tree
-    vim
     vlc
     wireshark
     xrectsel
