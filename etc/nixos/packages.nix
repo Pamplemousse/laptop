@@ -34,6 +34,7 @@
     tree
     vlc
     wireshark
+    xorg.xkbcomp
     xrectsel
     youtube-dl
     z3
