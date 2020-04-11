@@ -4,8 +4,19 @@
 #
 
 read -r -p "Where are your secret dotfiles? (ssh://user@domain:port/username/repo.git) " secret_dotfiles_repo
+read -r -p "What is your GitHub personal access token? " gh_personal_access_token
+read -r -p "What is your \`git.xaviermaso.com\` personal access token? " gxm_personal_access_token
 
 mkdir -p "${HOME}/Workspace/tools"
+
+# Create and deploy ssh key
+ssh-keygen -t ed25519 -o -a 100
+date="$(date +'%md%dd%Y')"
+pubkey="$(cat ${HOME}/.ssh/id_ed25519.pub | cut -d' ' -f1,2)"
+post_data=$(printf '{"title": "%s", "key": "%s"}' "w-$date" "$pubkey")
+
+curl -u "Pamplemousse:$gh_personal_access_token" -X POST --data "$post_data" https://api.github.com/user/keys
+curl -H "Authorization: token $gxm_personal_access_token" -X POST --data "$post_data" https://git.xaviermaso.com/user/keys
 
 # Pull down my dotfiles
 git clone https://github.com/andsens/homeshick.git "${HOME}/.homesick/repos/homeshick"
