@@ -20,6 +20,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
 
+  console = {
+    font = "Fura Code Regular Nerd Font Complete Mono";
+    keyMap = "fr-bepo";
+  };
+
   fonts = {
     enableFontDir = true;
     fonts = with pkgs; [
@@ -28,8 +33,6 @@
   };
 
   i18n = {
-    consoleFont = "Fura Code Regular Nerd Font Complete Mono";
-    consoleKeyMap = "fr-bepo";
     defaultLocale = "en_US.UTF-8";
   };
 
