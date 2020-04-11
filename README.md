@@ -2,6 +2,11 @@
 
 Setup a work environment on my laptop using NixOS.
 
+  * **write down necessary data and secrets**:
+    - "secret dotfiles" repository location
+    - GitHub personal access token
+    - LUKS key to decrypt external hard disk drive
+    - LUKS key to decrypt backup hard disk drive
   * download NixOS iso: [nixos.org/nixos/download.html](https://nixos.org/nixos/download.html)
   * setup usb key: `sudo dd bs=4M if=~/Downloads/nixos.iso of=/dev/sdb`
   * boot on it
