@@ -32,6 +32,9 @@
     ];
   };
 
+  hardware.nitrokey.enable = true;
+  hardware.u2f.enable = true;
+
   i18n = {
     defaultLocale = "en_US.UTF-8";
   };
@@ -39,10 +42,28 @@
   networking.hostName = "w";
   networking.networkmanager.enable = true;
 
+  security.pam = {
+    services = {
+      i3lock.u2fAuth = true;
+      login.u2fAuth = true;
+      lightdm.u2fAuth = true;
+    };
+
+    u2f = {
+      authFile = /home/pamplemousse/.config/u2f_keys;
+      enable = true;
+      control = "sufficient";
+    };
+  };
+
   services.logind.extraConfig = "
     HandleLidSwitch=suspend
     HandleLidSwitchDocked=suspend
   ";
+
+  services.udev.extraRules = ''
+    ACTION=="remove", ATTRS{idVendor}=="20a0", ATTRS{idProduct}=="4287", RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
+  '';
 
   services.xserver = {
     desktopManager.gnome3.enable = true;
@@ -59,7 +80,7 @@
 
   users.extraUsers.pamplemousse = {
     description = "Xavier Maso";
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "nitrokey" "docker" ];
     isNormalUser = true;
     shell = pkgs.zsh;
     uid = 1000;
