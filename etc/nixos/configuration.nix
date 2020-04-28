@@ -13,6 +13,7 @@
       ./usbguard.nix
       ./screenlocker.nix
       ./zathura.nix
+      ./zsh.nix
 
       ./packages.nix
     ];

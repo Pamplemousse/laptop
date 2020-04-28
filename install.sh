@@ -47,6 +47,7 @@ declare -a NIX_CONFIGURATION_FILES=(
   "keybase"
   "usbguard"
   "zathura"
+  "zsh"
 
   "packages"
   "screenlocker"
