@@ -22,8 +22,9 @@ dd if=/dev/random of=/dev/mapper/cryptkey bs=1024 count=14000
 
 cryptsetup luksFormat --key-file=/dev/mapper/cryptkey "${DISK}4"
 
-cryptsetup luksFormat "${DISK}5"
-cryptsetup luksAddKey "${DISK}5" /dev/mapper/cryptkey
+cryptsetup luksFormat --key-file=/dev/mapper/cryptkey "${DISK}5"
+# add a "recovery" key in case `cryptkey` gets corrupted
+cryptsetup luksAddKey --key-file=/dev/mapper/cryptkey "${DISK}5"
 
 cryptsetup luksOpen --key-file=/dev/mapper/cryptkey "${DISK}4" cryptswap
 mkswap -L swap /dev/mapper/cryptswap
