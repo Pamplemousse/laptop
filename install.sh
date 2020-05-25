@@ -58,7 +58,7 @@ do
     https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/"$file".nix
 done
 
-sed -i -e "s/DISK/${DISK}/g" /mnt/etc/nixos/luks-devices-configuration.nix
+sed -i -e "s,DISK,${DISK},g" /mnt/etc/nixos/luks-devices-configuration.nix
 curl -Sso /mnt/etc/nixos/configuration.nix \
   https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
 

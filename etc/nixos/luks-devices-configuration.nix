@@ -1,16 +1,16 @@
 {
   boot.initrd.luks.devices = {
     cryptkey = {
-      device = "/dev/DISK3";
+      device = "DISK3";
     };
 
     cryptroot = {
-      device = "/dev/DISK5";
+      device = "DISK5";
       keyFile = "/dev/mapper/cryptkey";
     };
 
     cryptswap = {
-      device = "/dev/DISK4";
+      device = "DISK4";
       keyFile = "/dev/mapper/cryptkey";
     };
   };
