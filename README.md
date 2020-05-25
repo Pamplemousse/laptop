@@ -14,14 +14,16 @@ Setup a work environment on my laptop using NixOS.
 ```bash
 loadkeys fr-bepo
 nmtui
-curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/install.sh | sh
+curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/install.sh > install.sh
+sh install.sh
 
 # reboot, login with the root user
 passwd pamplemousse
 passwd -l root
 
 # logout, login with pamplemousse
-curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/setup.sh | sh
+curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/setup.sh > setup.sh
+sh setup.sh
 ```
 
 ## lint
