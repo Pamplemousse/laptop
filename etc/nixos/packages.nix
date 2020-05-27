@@ -4,7 +4,6 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    afl
     bash
     binutils
     byzanz
@@ -13,18 +12,13 @@
     exif
     file
     firefox
-    gcc
-    gdb
     gimp
     git
-    gnumake
-    gradle
     keepassx-community
     libreoffice
     neovim
     ntfs3g
     oh-my-zsh
-    openjdk
     shellcheck
     skype
     ssss
@@ -37,7 +31,6 @@
     xorg.xkbcomp
     xrectsel
     youtube-dl
-    z3
     zoom-us
   ];
 
