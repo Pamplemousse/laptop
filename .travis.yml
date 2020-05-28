@@ -1,0 +1,4 @@
+language: shell
+os: linux
+script:
+  - bash -c 'shellcheck -e SC1090 install.sh setup.sh'
