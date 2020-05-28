@@ -12,7 +12,7 @@ mkdir -p "${HOME}/Workspace/tools"
 # Create and deploy ssh key
 ssh-keygen -t ed25519 -o -a 100
 date="$(date +'%md%dd%Y')"
-pubkey="$(cat ${HOME}/.ssh/id_ed25519.pub | cut -d' ' -f1,2)"
+pubkey="$(cut -d' ' -f1,2 < "${HOME}"/.ssh/id_ed25519.pub)"
 post_data=$(printf '{"title": "%s", "key": "%s"}' "w-$date" "$pubkey")
 
 curl -u "Pamplemousse:$gh_personal_access_token" -X POST --data "$post_data" https://api.github.com/user/keys
