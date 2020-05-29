@@ -19,7 +19,9 @@
     neovim
     ntfs3g
     oh-my-zsh
+    riot-desktop
     shellcheck
+    signal
     skype
     ssss
     syncthing
