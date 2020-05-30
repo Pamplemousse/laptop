@@ -49,5 +49,9 @@ curl -Sso "${HOME}/Workspace/tools/record-gif.sh" \
   https://raw.githubusercontent.com/edouard-lopez/record-gif.sh/master/record-gif.sh
 chmod +x "${HOME}/Workspace/tools/record-gif.sh"
 
+# Generate usbguard policy for current laptop
+usbguard_config="${HOME}/.config/usbguard/rules.conf"
+cat <(usbguard generate-policy) "$usbguard_config" > /tmp/rules.conf && mv /tmp/rules.conf "$usbguard_config"
+
 # Restart to apply configuration
 systemctl restart usbguard
