@@ -4,7 +4,12 @@
 #
 
 fdisk -l
-read -r -p "Which disk shall we install everything on? (eg: /dev/sda) " DISK
+
+read -r -p "Which disk shall we install everything on? (eg: /dev/sda)
+> " DISK
+read -r -p "On which computer are we doing the install? (see https://github.com/NixOS/nixos-hardware for options; e.g: <nixos-hardware/lenovo/thinkpad/x220>)
+> " HARDWARE
+
 RAM="$(free --giga | awk 'NR==2{print $2}')"
 # 16MiB for header, 4MiB for the keyfile (random data)
 CRYPTKEY_PARTITION_SIZE="20MiB"
@@ -61,8 +66,12 @@ do
     https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/"$file".nix
 done
 
+sed -i -e "s,HARDWARE,${HARDWARE},g" /mnt/etc/nixos/configuration.nix
+
 sed -i -e "s,DISK,${DISK},g" /mnt/etc/nixos/luks-devices-configuration.nix
 curl -Sso /mnt/etc/nixos/configuration.nix \
   https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
 
+nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
+nix-channel --update
 nixos-install

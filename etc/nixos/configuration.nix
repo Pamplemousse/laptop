@@ -3,6 +3,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      HARDWARE
       ./hardware-configuration.nix
       ./luks-devices-configuration.nix
 
