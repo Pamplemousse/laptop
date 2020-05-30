@@ -11,6 +11,7 @@
       ./docker.nix
       ./irssi.nix
       ./keybase.nix
+      ./nix.nix
       ./usbguard.nix
       ./screenlocker.nix
       ./zathura.nix

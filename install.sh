@@ -53,6 +53,7 @@ declare -a NIX_CONFIGURATION_FILES=(
   "docker"
   "irssi"
   "keybase"
+  "nix"
   "usbguard"
   "zathura"
   "zsh"
