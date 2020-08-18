@@ -39,8 +39,16 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking.hostName = "w";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "w";
+
+    networkmanager.enable = true;
+
+    # Save myself hours of internet-less debugging by leaving that commented:
+    # `option edns0` in `/etc/resolv.conf` breaks DNS with old / consumer-grade routers;
+    # See https://github.com/NixOS/nixpkgs/issues/24433 .
+    # resolvconf.dnsExtensionMechanism = false;
+  };
 
   services.logind.extraConfig = "
     HandleLidSwitch=suspend
