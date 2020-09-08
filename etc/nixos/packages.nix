@@ -8,7 +8,6 @@
     binutils
     byzanz
     chromium
-    ctags
     exif
     file
     firefox
@@ -19,6 +18,7 @@
     neovim
     ntfs3g
     oh-my-zsh
+    ptags
     riot-desktop
     shellcheck
     signal
