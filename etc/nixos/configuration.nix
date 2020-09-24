@@ -75,7 +75,7 @@
 
   users.extraUsers.pamplemousse = {
     description = "Xavier Maso";
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "adbusers" "docker" "networkmanager" "wheel" ];
     isNormalUser = true;
     shell = pkgs.zsh;
     uid = 1000;
