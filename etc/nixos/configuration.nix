@@ -75,7 +75,7 @@
 
   users.extraUsers.pamplemousse = {
     description = "Xavier Maso";
-    extraGroups = [ "adbusers" "docker" "networkmanager" "wheel" ];
+    extraGroups = [ "adbusers" "docker" "networkmanager" "vboxusers" "wheel" ];
     isNormalUser = true;
     shell = pkgs.zsh;
     uid = 1000;
@@ -83,5 +83,6 @@
 
   virtualisation = {
     virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
   };
 }
