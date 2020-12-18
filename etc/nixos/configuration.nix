@@ -55,6 +55,10 @@
     # resolvconf.dnsExtensionMechanism = false;
   };
 
+  nix = {
+    trustedUsers = [ "@wheel" ];
+  };
+
   services.logind.extraConfig = "
     HandleLidSwitch=suspend
     HandleLidSwitchDocked=suspend
