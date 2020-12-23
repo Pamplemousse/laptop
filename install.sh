@@ -54,7 +54,6 @@ declare -a NIX_CONFIGURATION_FILES=(
   "irssi"
   "keybase"
   "nix"
-  "usbguard"
   "zathura"
   "zsh"
 
@@ -76,7 +75,3 @@ curl -Sso /mnt/etc/nixos/configuration.nix \
 nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 nix-channel --update
 nixos-install
-
-# Fixup of the usbguard configuration implications:
-# Pamplemousse's `~/.config/` is owned by `root:root`, preventing successful deployment of dotfiles in it.
-chown -R pamplemousse:users /home/pamplemousse/.config/

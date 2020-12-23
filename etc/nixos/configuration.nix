@@ -12,7 +12,6 @@
       ./irssi.nix
       ./keybase.nix
       ./nix.nix
-      ./usbguard.nix
       ./screenlocker.nix
       ./zathura.nix
       ./zsh.nix
@@ -29,7 +28,7 @@
   };
 
   fonts = {
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = with pkgs; [
       nerdfonts
     ];

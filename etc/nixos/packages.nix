@@ -19,9 +19,9 @@
     ntfs3g
     oh-my-zsh
     ptags
-    riot-desktop
+    element-desktop
     shellcheck
-    signal
+    signal-desktop
     skype
     ssss
     syncthing
