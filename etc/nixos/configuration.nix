@@ -64,9 +64,26 @@
   ";
 
   services.xserver = {
-    desktopManager.gnome3.enable = true;
-    displayManager.gdm.enable = true;
     enable = true;
+
+    desktopManager = {
+      xfce = {
+        enable = true;
+        enableXfwm = false;
+      };
+    };
+
+    displayManager = {
+      defaultSession = "xfce+xmonad";
+      lightdm.enable = true;
+    };
+
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      extraPackages = ps: with ps; [ xmonad xmonad-contrib xmonad-extras ];
+    };
+
     layout = "fr";
     xkbVariant = "bepo";
   };
