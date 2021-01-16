@@ -4,9 +4,12 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    autojump
     bash
+    bat
     binutils
     byzanz
+    cachix
     chromium
     exif
     file
@@ -16,9 +19,13 @@
     keepassx-community
     libreoffice
     lightlocker
+    lsd
+    manpages
     neovim
+    nix-index
     ntfs3g
     oh-my-zsh
+    playerctl
     ptags
     element-desktop
     shellcheck
@@ -31,6 +38,7 @@
     tree
     vlc
     wireshark
+    xclip
     xorg.xkbcomp
     xrectsel
     youtube-dl
