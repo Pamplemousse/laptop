@@ -2,7 +2,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       HARDWARE
       ./hardware-configuration.nix
       ./luks-devices-configuration.nix
@@ -38,10 +39,12 @@
   };
 
   networking = {
-    extraHosts = let
-      hostsPath = https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts;
-      hostsFile = builtins.fetchurl hostsPath;
-    in builtins.readFile "${hostsFile}";
+    extraHosts =
+      let
+        hostsPath = https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts;
+        hostsFile = builtins.fetchurl hostsPath;
+      in
+      builtins.readFile "${hostsFile}";
 
     hostName = "w";
 

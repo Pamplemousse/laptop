@@ -29,7 +29,10 @@ sh setup.sh
 ## lint
 
 ```bash
+# shell scripts
 shellcheck -e SC1090 install.sh setup.sh
+# nix expressions
+nixpkgs-fmt --check etc/nixos/*.nix
 ```
 
 ## help
