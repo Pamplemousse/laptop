@@ -12,7 +12,6 @@
       ./irssi.nix
       ./keybase.nix
       ./nix.nix
-      ./screenlocker.nix
       ./zathura.nix
       ./zsh.nix
 

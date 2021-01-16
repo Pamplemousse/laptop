@@ -15,6 +15,7 @@
     git
     keepassx-community
     libreoffice
+    lightlocker
     neovim
     ntfs3g
     oh-my-zsh
