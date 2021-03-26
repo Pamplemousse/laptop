@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Needs to specify where to find `nixos-generate` during GitHub Actions.
-if ! nixos-generate --help 2>&1 >/dev/null; then
-  if [ ! -z "$GITHUB_WORKSPACE" ]; then
+if ! nixos-generate --help >/dev/null 2>&1; then
+  if [ -n "$GITHUB_WORKSPACE" ]; then
     export PATH=$GITHUB_WORKSPACE/nixos-generators:$PATH
   fi
 fi
