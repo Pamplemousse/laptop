@@ -13,7 +13,7 @@ Setup a work environment on my laptop using NixOS.
 
 ```bash
 loadkeys fr-bepo
-nmtui
+wpa_supplicant -B -i <INTERFACE> -c <(wpa_passphrase <SSID> <PASSWORD>)
 curl -Ss https://raw.githubusercontent.com/Pamplemousse/laptop/master/install.sh > install.sh
 sh install.sh
 
