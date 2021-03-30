@@ -1,0 +1,44 @@
+diff --git a/etc/nixos/.configuration.nix b/etc/nixos/.configuration.nix
+index 0d92871..74844fa 100644
+--- a/etc/nixos/.configuration.nix
++++ b/etc/nixos/.configuration.nix
+@@ -23,29 +23,14 @@
+   boot.loader.systemd-boot.enable = true;
+ 
+   console = {
+-    font = "Fura Code Regular Nerd Font Complete Mono";
+     keyMap = "fr-bepo";
+   };
+ 
+-  fonts = {
+-    fontDir.enable = true;
+-    fonts = with pkgs; [
+-      nerdfonts
+-    ];
+-  };
+-
+   i18n = {
+     defaultLocale = "en_US.UTF-8";
+   };
+ 
+   networking = {
+-    extraHosts =
+-      let
+-        hostsPath = https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts;
+-        hostsFile = builtins.fetchurl hostsPath;
+-      in
+-      builtins.readFile "${hostsFile}";
+-
+     hostName = "w";
+ 
+     networkmanager.enable = true;
+@@ -102,9 +87,4 @@
+     shell = pkgs.zsh;
+     uid = 1000;
+   };
+-
+-  virtualisation = {
+-    virtualbox.host.enable = true;
+-    virtualbox.host.enableExtensionPack = true;
+-  };
+ }
