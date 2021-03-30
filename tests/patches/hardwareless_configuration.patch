@@ -1,0 +1,16 @@
+diff --git a/etc/nixos/.configuration.nix b/etc/nixos/.configuration.nix
+index 0d92871..a9cbda6 100644
+--- a/etc/nixos/.configuration.nix
++++ b/etc/nixos/.configuration.nix
+@@ -3,11 +3,6 @@
+ {
+   imports =
+     [
+-      # Include the results of the hardware scan.
+-      HARDWARE
+-      ./hardware-configuration.nix
+-      ./luks-devices-configuration.nix
+-
+       # Include packages with their related configuration
+       ./docker.nix
+       ./irssi.nix

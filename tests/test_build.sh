@@ -9,8 +9,6 @@ fi
 
 # Work on a copy of the configuration, trimmed from hardware specific content.
 cp ./etc/nixos/configuration.nix ./etc/nixos/.configuration.nix
-sed -i -e "s,HARDWARE,,g" ./etc/nixos/.configuration.nix
-sed -i -e "s,./hardware-configuration.nix,,g" ./etc/nixos/.configuration.nix
-sed -i -e "s,./luks-devices-configuration.nix,,g" ./etc/nixos/.configuration.nix
+patch ./etc/nixos/.configuration.nix tests/patches/hardwareless_configuration.patch
 
 nixos-generate -f vm -c ./etc/nixos/.configuration.nix
