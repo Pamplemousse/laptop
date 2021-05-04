@@ -10,7 +10,6 @@
     binutils
     byzanz
     cachix
-    chromium
     exif
     file
     firefox
@@ -36,6 +35,7 @@
     tcpdump
     tmux
     tree
+    ungoogled-chromium
     vlc
     wireshark
     xclip
