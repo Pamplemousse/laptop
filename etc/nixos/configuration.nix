@@ -30,12 +30,13 @@
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
-      nerdfonts
+      (nerdfonts.override { fonts = [ "FiraMono" ]; })
     ];
   };
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
+    supportedLocales = [ "en_US.UTF-8/UTF-8" ];
   };
 
   networking = {
