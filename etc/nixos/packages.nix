@@ -10,6 +10,7 @@
     binutils
     byzanz
     cachix
+    du-dust
     exif
     file
     firefox
