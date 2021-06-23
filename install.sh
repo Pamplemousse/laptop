@@ -12,14 +12,14 @@ read -r -p "On which computer are we doing the install? (see https://github.com/
 
 RAM="$(free --giga | awk 'NR==2{print $2}')"
 # 16MiB for header, 4MiB for the keyfile (random data)
-CRYPTKEY_PARTITION_SIZE="20MiB"
+CRYPTKEY_PARTITION_SIZE="20M"
 
 # format and create partitions
 sgdisk -og "$DISK"
 sgdisk -n 1:2048:4095 -c 1:"BIOS boot partition" -t 1:ef02 "$DISK"
-sgdisk -n 2:0:+550MiB -c 2:"EFI system partition" -t 2:ef00 "$DISK"
+sgdisk -n 2:0:+550M -c 2:"EFI system partition" -t 2:ef00 "$DISK"
 sgdisk -n 3:0:+"${CRYPTKEY_PARTITION_SIZE}" -c 3:"cryptsetup luks key" -t 3:8300 "$DISK"
-sgdisk -n 4:0:+"${RAM}"GiB -c 4:"swap space (hibernation)" -t 4:8300 "$DISK"
+sgdisk -n 4:0:+"${RAM}"G -c 4:"swap space (hibernation)" -t 4:8300 "$DISK"
 sgdisk -n 5:0:"$(sgdisk -E "$DISK")" -c 5:"root filesystem" -t 5:8300 "$DISK"
 
 cryptsetup luksFormat "${DISK}3"
