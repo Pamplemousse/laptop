@@ -48,6 +48,7 @@ mount /dev/disk/by-label/efi /mnt/boot
 nixos-generate-config --root /mnt
 
 declare -a NIX_CONFIGURATION_FILES=(
+  "configuration"
   "luks-devices-configuration"
 
   "docker"
@@ -66,10 +67,7 @@ do
 done
 
 sed -i -e "s,HARDWARE,${HARDWARE},g" /mnt/etc/nixos/configuration.nix
-
 sed -i -e "s,DISK,${DISK},g" /mnt/etc/nixos/luks-devices-configuration.nix
-curl -Sso /mnt/etc/nixos/configuration.nix \
-  https://raw.githubusercontent.com/Pamplemousse/laptop/master/etc/nixos/configuration.nix
 
 nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 nix-channel --update
