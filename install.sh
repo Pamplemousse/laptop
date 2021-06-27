@@ -22,14 +22,14 @@ sgdisk -n 3:0:+"${CRYPTKEY_PARTITION_SIZE}" -c 3:"cryptsetup luks key" -t 3:8300
 sgdisk -n 4:0:+"${RAM}"G -c 4:"swap space (hibernation)" -t 4:8300 "$DISK"
 sgdisk -n 5:0:"$(sgdisk -E "$DISK")" -c 5:"root filesystem" -t 5:8300 "$DISK"
 
-cryptsetup luksFormat "${DISK}3"
+cryptsetup --batch-mode --verify-passphrase luksFormat "${DISK}3"
 cryptsetup luksOpen "${DISK}3" cryptkey
 
 dd if=/dev/urandom of=/dev/null bs=1KB count=4MB iflag=count_bytes,fullblock
 
-cryptsetup luksFormat --key-file=/dev/mapper/cryptkey "${DISK}4"
+cryptsetup --batch-mode luksFormat --key-file=/dev/mapper/cryptkey "${DISK}4"
 
-cryptsetup luksFormat --key-file=/dev/mapper/cryptkey "${DISK}5"
+cryptsetup --batch-mode luksFormat --key-file=/dev/mapper/cryptkey "${DISK}5"
 # add a "recovery" key in case `cryptkey` gets corrupted
 cryptsetup luksAddKey --key-file=/dev/mapper/cryptkey "${DISK}5"
 
